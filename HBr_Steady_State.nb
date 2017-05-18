@@ -1,0 +1,582 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24556,        574]
+NotebookOptionsPosition[     24110,        556]
+NotebookOutlinePosition[     24454,        571]
+CellTagsIndexPosition[     24411,        568]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"brsolns", "[", 
+    RowBox[{
+    "ka_", ",", " ", "kb_", ",", " ", "kc_", ",", " ", "kd_", ",", " ", "ke_",
+      ",", " ", "br2starter_", ",", " ", "brstarter_", ",", " ", "h2starter_",
+      ",", " ", "hstarter_", ",", " ", "hbrstarter_"}], "]"}], " ", ":=", " ",
+    "\[IndentingNewLine]", 
+   RowBox[{"NDSolve", "[", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"br2", "'"}], "[", "t", "]"}], " ", "\[Equal]", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "ka"}], " ", 
+          RowBox[{"br2", "[", "t", "]"}]}], " ", "-", " ", 
+         RowBox[{"kc", " ", 
+          RowBox[{"h", "[", "t", "]"}], " ", 
+          RowBox[{"br2", "[", "t", "]"}]}], " ", "+", " ", 
+         RowBox[{"ke", " ", 
+          RowBox[{
+           RowBox[{"br", "[", "t", "]"}], "^", "2"}]}]}]}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"br", "'"}], "[", "t", "]"}], " ", "\[Equal]", " ", 
+        RowBox[{
+         RowBox[{"2", " ", "ka", " ", 
+          RowBox[{"br2", "[", "t", "]"}]}], " ", "-", " ", 
+         RowBox[{"kb", " ", 
+          RowBox[{"br", "[", "t", "]"}], " ", 
+          RowBox[{"h2", "[", "t", "]"}]}], " ", "+", " ", 
+         RowBox[{"kc", " ", 
+          RowBox[{"h", "[", "t", "]"}], " ", 
+          RowBox[{"br2", "[", "t", "]"}]}], " ", "+", " ", 
+         RowBox[{"kd", " ", 
+          RowBox[{"h", "[", "t", "]"}], " ", 
+          RowBox[{"hbr", "[", "t", "]"}]}], " ", "-", " ", 
+         RowBox[{"2", " ", "ke", " ", 
+          RowBox[{
+           RowBox[{"br", "[", "t", "]"}], "^", "2"}]}]}]}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"h2", "'"}], "[", "t", "]"}], " ", "\[Equal]", "  ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "kb"}], " ", 
+          RowBox[{"br", "[", "t", "]"}], " ", 
+          RowBox[{"h2", "[", "t", "]"}]}], " ", "+", " ", 
+         RowBox[{"kd", " ", 
+          RowBox[{"h", "[", "t", "]"}], " ", 
+          RowBox[{"hbr", "[", "t", "]"}]}]}]}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"h", "'"}], "[", "t", "]"}], " ", "\[Equal]", " ", 
+        RowBox[{
+         RowBox[{"kb", " ", 
+          RowBox[{"br", "[", "t", "]"}], " ", 
+          RowBox[{"h2", "[", "t", "]"}]}], " ", "-", " ", 
+         RowBox[{"kc", " ", 
+          RowBox[{"h", "[", "t", "]"}], " ", 
+          RowBox[{"br2", "[", "t", "]"}]}], " ", "-", " ", 
+         RowBox[{"kd", " ", 
+          RowBox[{"h", "[", "t", "]"}], " ", 
+          RowBox[{"hbr", "[", "t", "]"}]}]}]}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"hbr", "'"}], "[", "t", "]"}], " ", "\[Equal]", " ", 
+        RowBox[{
+         RowBox[{"kb", " ", 
+          RowBox[{"br", "[", "t", "]"}], " ", 
+          RowBox[{"h2", "[", "t", "]"}]}], " ", "+", " ", 
+         RowBox[{"kc", " ", 
+          RowBox[{"h", "[", "t", "]"}], " ", 
+          RowBox[{"br2", "[", "t", "]"}]}], " ", "-", " ", 
+         RowBox[{"kd", " ", 
+          RowBox[{"h", "[", "t", "]"}], " ", 
+          RowBox[{"hbr", "[", "t", "]"}]}]}]}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"br2", "[", "0", "]"}], " ", "\[Equal]", " ", "br2starter"}], 
+       ",", " ", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"br", "[", "0", "]"}], " ", "\[Equal]", " ", "brstarter"}], 
+       ",", " ", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"h2", "[", "0", "]"}], " ", "\[Equal]", " ", "h2starter"}], 
+       ",", " ", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"h", "[", "0", "]"}], " ", "\[Equal]", " ", "hstarter"}], ",",
+        " ", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"hbr", "[", "0", "]"}], " ", "\[Equal]", " ", 
+        "hbrstarter"}]}], "\[IndentingNewLine]", "}"}], ",", " ", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+      "br2", ",", " ", "br", ",", " ", "h2", ",", " ", "h", ",", " ", "hbr"}],
+       "}"}], ",", " ", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", " ", "0", ",", " ", "10"}], "}"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Plot", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Evaluate", "[", 
+        RowBox[{
+         RowBox[{"br2", "[", "t", "]"}], " ", "/.", " ", 
+         RowBox[{"brsolns", "[", 
+          RowBox[{
+          "k1", ",", " ", "k2", ",", " ", "k3", ",", " ", "k4", ",", " ", 
+           "k5", ",", " ", "br20", ",", " ", "br0", ",", " ", "h20", ",", " ",
+            "h0", ",", " ", "hbr0"}], "]"}]}], "]"}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Evaluate", "[", 
+        RowBox[{
+         RowBox[{"br", "[", "t", "]"}], " ", "/.", " ", 
+         RowBox[{"brsolns", "[", 
+          RowBox[{
+          "k1", ",", " ", "k2", ",", " ", "k3", ",", " ", "k4", ",", " ", 
+           "k5", ",", " ", "br20", ",", " ", "br0", ",", " ", "h20", ",", " ",
+            "h0", ",", " ", "hbr0"}], "]"}]}], "]"}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Evaluate", "[", 
+        RowBox[{
+         RowBox[{"h2", "[", "t", "]"}], " ", "/.", " ", 
+         RowBox[{"brsolns", "[", 
+          RowBox[{
+          "k1", ",", " ", "k2", ",", " ", "k3", ",", " ", "k4", ",", " ", 
+           "k5", ",", " ", "br20", ",", " ", "br0", ",", " ", "h20", ",", " ",
+            "h0", ",", " ", "hbr0"}], "]"}]}], "]"}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Evaluate", "[", 
+        RowBox[{
+         RowBox[{"h", "[", "t", "]"}], " ", "/.", " ", 
+         RowBox[{"brsolns", "[", 
+          RowBox[{
+          "k1", ",", " ", "k2", ",", " ", "k3", ",", " ", "k4", ",", " ", 
+           "k5", ",", " ", "br20", ",", " ", "br0", ",", " ", "h20", ",", " ",
+            "h0", ",", " ", "hbr0"}], "]"}]}], "]"}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Evaluate", "[", 
+        RowBox[{
+         RowBox[{"hbr", "[", "t", "]"}], " ", "/.", " ", 
+         RowBox[{"brsolns", "[", 
+          RowBox[{
+          "k1", ",", " ", "k2", ",", " ", "k3", ",", " ", "k4", ",", " ", 
+           "k5", ",", " ", "br20", ",", " ", "br0", ",", " ", "h20", ",", " ",
+            "h0", ",", " ", "hbr0"}], "]"}]}], "]"}]}], "\[IndentingNewLine]",
+       "}"}], ",", " ", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", " ", "0", ",", " ", "endtime"}], "}"}], ",", " ", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotRange", " ", "\[Rule]", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", "10"}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", "2"}], "}"}]}], "}"}]}], ",", " ", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "Red", "}"}], ",", " ", 
+        RowBox[{"{", "Green", "}"}], ",", " ", 
+        RowBox[{"{", "Blue", "}"}], ",", " ", 
+        RowBox[{"{", "Orange", "}"}], ",", " ", 
+        RowBox[{"{", "Black", "}"}]}], "}"}]}], ",", " ", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<[\!\(\*SubscriptBox[\(Br\), \(2\)]\)]\>\"", ",", " ", 
+        "\"\<[Br]\>\"", ",", " ", 
+        "\"\<[\!\(\*SubscriptBox[\(H\), \(2\)]\)]\>\"", ",", " ", 
+        "\"\<[H]\>\"", ",", " ", "\"\<[HBr]\>\""}], "}"}]}], ",", " ", 
+     "\[IndentingNewLine]", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Time\>\"", ",", " ", "\"\<Concentration\>\""}], "}"}]}], 
+     ",", " ", "\[IndentingNewLine]", 
+     RowBox[{"ImageSize", " ", "\[Rule]", " ", "410"}], ",", " ", 
+     "\[IndentingNewLine]", 
+     RowBox[{"AspectRatio", "\[Rule]", 
+      RowBox[{"9", "/", "10"}]}]}], "]"}], ",", " ", "\[IndentingNewLine]", 
+   RowBox[{"Button", "[", 
+    RowBox[{"\"\<Reset\>\"", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"endtime", " ", "=", " ", "5"}], ",", " ", 
+       RowBox[{"k1", " ", "=", " ", "1"}], ",", " ", 
+       RowBox[{"k2", " ", "=", " ", "1"}], ",", " ", 
+       RowBox[{"k3", " ", "=", " ", "1"}], ",", " ", 
+       RowBox[{"k4", " ", "=", " ", "1"}], ",", " ", 
+       RowBox[{"k5", " ", "=", " ", "1"}], ",", " ", 
+       RowBox[{"br20", " ", "=", " ", "1"}], ",", " ", 
+       RowBox[{"br0", " ", "=", " ", "0"}], " ", ",", " ", 
+       RowBox[{"h20", " ", "=", " ", "1"}], ",", " ", 
+       RowBox[{"h0", " ", "=", " ", "0"}], ",", " ", 
+       RowBox[{"hbr0", " ", "=", " ", "0"}]}], "}"}]}], "]"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"endtime", ",", " ", "5", ",", " ", "\"\<Time\>\""}], "}"}], 
+     ",", " ", "0.01", ",", " ", "10", ",", " ", 
+     RowBox[{"ImageSize", " ", "\[Rule]", " ", "Tiny"}]}], "}"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k1", ",", " ", "1", ",", " ", 
+       RowBox[{"Subscript", "[", 
+        RowBox[{"\"\<k\>\"", ",", " ", "\"\<1\>\""}], "]"}]}], "}"}], ",", 
+     " ", "0.1", ",", " ", "3", ",", " ", 
+     RowBox[{"ImageSize", " ", "\[Rule]", " ", "Tiny"}]}], "}"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k2", ",", " ", "1", ",", " ", 
+       RowBox[{"Subscript", "[", 
+        RowBox[{"\"\<k\>\"", ",", " ", "\"\<2\>\""}], "]"}]}], "}"}], ",", 
+     " ", "0.1", ",", " ", "3", ",", " ", 
+     RowBox[{"ImageSize", " ", "\[Rule]", " ", "Tiny"}]}], "}"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k3", ",", " ", "1", ",", " ", 
+       RowBox[{"Subscript", "[", 
+        RowBox[{"\"\<k\>\"", ",", " ", "\"\<3\>\""}], "]"}]}], "}"}], ",", 
+     " ", "0.1", ",", " ", "3", ",", " ", 
+     RowBox[{"ImageSize", " ", "\[Rule]", " ", "Tiny"}]}], "}"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k4", ",", " ", "1", ",", " ", 
+       RowBox[{"Subscript", "[", 
+        RowBox[{"\"\<k\>\"", ",", " ", "\"\<4\>\""}], "]"}]}], "}"}], ",", 
+     " ", "0.1", ",", " ", "3", ",", " ", 
+     RowBox[{"ImageSize", " ", "\[Rule]", " ", "Tiny"}]}], "}"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k5", ",", " ", "1", ",", " ", 
+       RowBox[{"Subscript", "[", 
+        RowBox[{"\"\<k\>\"", ",", " ", "\"\<5\>\""}], "]"}]}], "}"}], ",", 
+     " ", "0.1", ",", " ", "3", ",", " ", 
+     RowBox[{"ImageSize", " ", "\[Rule]", " ", "Tiny"}]}], "}"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "br20", ",", " ", "1", ",", " ", 
+       "\"\<[\!\(\*SubscriptBox[\(Br\), \(2\)]\)\!\(\*SubscriptBox[\(]\), \(0\
+\)]\)\>\""}], "}"}], ",", " ", "0.1", ",", " ", "2", ",", " ", 
+     RowBox[{"ImageSize", " ", "\[Rule]", " ", "Tiny"}]}], "}"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "br0", ",", " ", "0", ",", " ", 
+       "\"\<[Br\[CenterDot]\!\(\*SubscriptBox[\(]\), \(0\)]\)\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "2", ",", " ", 
+     RowBox[{"ImageSize", " ", "\[Rule]", " ", "Tiny"}]}], "}"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "h20", ",", " ", "1", ",", " ", 
+       "\"\<[\!\(\*SubscriptBox[\(H\), \(2\)]\)\!\(\*SubscriptBox[\(]\), \
+\(0\)]\)\>\""}], "}"}], ",", " ", "0.1", ",", " ", "2", ",", " ", 
+     RowBox[{"ImageSize", " ", "\[Rule]", " ", "Tiny"}]}], "}"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "h0", ",", " ", "0", ",", " ", 
+       "\"\<[H\[CenterDot]\!\(\*SubscriptBox[\(]\), \(0\)]\)\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "2", ",", " ", 
+     RowBox[{"ImageSize", " ", "\[Rule]", " ", "Tiny"}]}], "}"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "hbr0", ",", " ", "0", ",", " ", 
+       "\"\<[HBr\!\(\*SubscriptBox[\(]\), \(0\)]\)\>\""}], "}"}], ",", " ", 
+     "0", ",", " ", "2", ",", " ", 
+     RowBox[{"ImageSize", " ", "\[Rule]", " ", "Tiny"}]}], "}"}], ",", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "\[IndentingNewLine]", 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.7040579998032093`*^9, 
+  3.704058025018508*^9}},ExpressionUUID->"cbf1a1d4-0918-40dc-86f8-\
+5bacb91b44f6"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`br0$$ = 0, $CellContext`br20$$ = 
+    1, $CellContext`endtime$$ = 5, $CellContext`h0$$ = 0, $CellContext`h20$$ =
+     1, $CellContext`hbr0$$ = 0, $CellContext`k1$$ = 1, $CellContext`k2$$ = 
+    1, $CellContext`k3$$ = 1, $CellContext`k4$$ = 1, $CellContext`k5$$ = 1, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[
+       Button[
+       "Reset", {$CellContext`endtime$$ = 5, $CellContext`k1$$ = 
+         1, $CellContext`k2$$ = 1, $CellContext`k3$$ = 1, $CellContext`k4$$ = 
+         1, $CellContext`k5$$ = 1, $CellContext`br20$$ = 
+         1, $CellContext`br0$$ = 0, $CellContext`h20$$ = 1, $CellContext`h0$$ = 
+         0, $CellContext`hbr0$$ = 0}]], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`endtime$$], 5, "Time"}, 0.01, 10}, {{
+       Hold[$CellContext`k1$$], 1, 
+       Subscript["k", "1"]}, 0.1, 3}, {{
+       Hold[$CellContext`k2$$], 1, 
+       Subscript["k", "2"]}, 0.1, 3}, {{
+       Hold[$CellContext`k3$$], 1, 
+       Subscript["k", "3"]}, 0.1, 3}, {{
+       Hold[$CellContext`k4$$], 1, 
+       Subscript["k", "4"]}, 0.1, 3}, {{
+       Hold[$CellContext`k5$$], 1, 
+       Subscript["k", "5"]}, 0.1, 3}, {{
+       Hold[$CellContext`br20$$], 1, 
+       "[\!\(\*SubscriptBox[\(Br\), \(2\)]\)\!\(\*SubscriptBox[\(]\), \
+\(0\)]\)"}, 0.1, 2}, {{
+       Hold[$CellContext`br0$$], 0, 
+       "[Br\[CenterDot]\!\(\*SubscriptBox[\(]\), \(0\)]\)"}, 0, 2}, {{
+       Hold[$CellContext`h20$$], 1, 
+       "[\!\(\*SubscriptBox[\(H\), \(2\)]\)\!\(\*SubscriptBox[\(]\), \
+\(0\)]\)"}, 0.1, 2}, {{
+       Hold[$CellContext`h0$$], 0, 
+       "[H\[CenterDot]\!\(\*SubscriptBox[\(]\), \(0\)]\)"}, 0, 2}, {{
+       Hold[$CellContext`hbr0$$], 0, 
+       "[HBr\!\(\*SubscriptBox[\(]\), \(0\)]\)"}, 0, 2}}, Typeset`size$$ = {
+    487., {169., 176.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`endtime$1777$$ = 
+    0, $CellContext`k1$1782$$ = 0, $CellContext`k2$1783$$ = 
+    0, $CellContext`k3$1784$$ = 0, $CellContext`k4$1785$$ = 
+    0, $CellContext`k5$1786$$ = 0, $CellContext`br20$1787$$ = 
+    0, $CellContext`br0$1788$$ = 0, $CellContext`h20$1789$$ = 
+    0, $CellContext`h0$1790$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`br0$$ = 0, $CellContext`br20$$ = 
+        1, $CellContext`endtime$$ = 5, $CellContext`h0$$ = 
+        0, $CellContext`h20$$ = 1, $CellContext`hbr0$$ = 0, $CellContext`k1$$ = 
+        1, $CellContext`k2$$ = 1, $CellContext`k3$$ = 1, $CellContext`k4$$ = 
+        1, $CellContext`k5$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`endtime$$, $CellContext`endtime$1777$$, 0], 
+        Hold[$CellContext`k1$$, $CellContext`k1$1782$$, 0], 
+        Hold[$CellContext`k2$$, $CellContext`k2$1783$$, 0], 
+        Hold[$CellContext`k3$$, $CellContext`k3$1784$$, 0], 
+        Hold[$CellContext`k4$$, $CellContext`k4$1785$$, 0], 
+        Hold[$CellContext`k5$$, $CellContext`k5$1786$$, 0], 
+        Hold[$CellContext`br20$$, $CellContext`br20$1787$$, 0], 
+        Hold[$CellContext`br0$$, $CellContext`br0$1788$$, 0], 
+        Hold[$CellContext`h20$$, $CellContext`h20$1789$$, 0], 
+        Hold[$CellContext`h0$$, $CellContext`h0$1790$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[{
+         Evaluate[
+          ReplaceAll[
+           $CellContext`br2[$CellContext`t], 
+           $CellContext`brsolns[$CellContext`k1$$, $CellContext`k2$$, \
+$CellContext`k3$$, $CellContext`k4$$, $CellContext`k5$$, $CellContext`br20$$, \
+$CellContext`br0$$, $CellContext`h20$$, $CellContext`h0$$, \
+$CellContext`hbr0$$]]], 
+         Evaluate[
+          ReplaceAll[
+           $CellContext`br[$CellContext`t], 
+           $CellContext`brsolns[$CellContext`k1$$, $CellContext`k2$$, \
+$CellContext`k3$$, $CellContext`k4$$, $CellContext`k5$$, $CellContext`br20$$, \
+$CellContext`br0$$, $CellContext`h20$$, $CellContext`h0$$, \
+$CellContext`hbr0$$]]], 
+         Evaluate[
+          ReplaceAll[
+           $CellContext`h2[$CellContext`t], 
+           $CellContext`brsolns[$CellContext`k1$$, $CellContext`k2$$, \
+$CellContext`k3$$, $CellContext`k4$$, $CellContext`k5$$, $CellContext`br20$$, \
+$CellContext`br0$$, $CellContext`h20$$, $CellContext`h0$$, \
+$CellContext`hbr0$$]]], 
+         Evaluate[
+          ReplaceAll[
+           $CellContext`h[$CellContext`t], 
+           $CellContext`brsolns[$CellContext`k1$$, $CellContext`k2$$, \
+$CellContext`k3$$, $CellContext`k4$$, $CellContext`k5$$, $CellContext`br20$$, \
+$CellContext`br0$$, $CellContext`h20$$, $CellContext`h0$$, \
+$CellContext`hbr0$$]]], 
+         Evaluate[
+          ReplaceAll[
+           $CellContext`hbr[$CellContext`t], 
+           $CellContext`brsolns[$CellContext`k1$$, $CellContext`k2$$, \
+$CellContext`k3$$, $CellContext`k4$$, $CellContext`k5$$, $CellContext`br20$$, \
+$CellContext`br0$$, $CellContext`h20$$, $CellContext`h0$$, \
+$CellContext`hbr0$$]]]}, {$CellContext`t, 0, $CellContext`endtime$$}, 
+        PlotRange -> {{0, 10}, {0, 2}}, 
+        PlotStyle -> {{Red}, {Green}, {Blue}, {Orange}, {Black}}, 
+        PlotLegends -> {
+         "[\!\(\*SubscriptBox[\(Br\), \(2\)]\)]", "[Br]", 
+          "[\!\(\*SubscriptBox[\(H\), \(2\)]\)]", "[H]", "[HBr]"}, 
+        AxesLabel -> {"Time", "Concentration"}, ImageSize -> 410, AspectRatio -> 
+        9/10], "Specifications" :> {
+        Button[
+        "Reset", {$CellContext`endtime$$ = 5, $CellContext`k1$$ = 
+          1, $CellContext`k2$$ = 1, $CellContext`k3$$ = 1, $CellContext`k4$$ = 
+          1, $CellContext`k5$$ = 1, $CellContext`br20$$ = 
+          1, $CellContext`br0$$ = 0, $CellContext`h20$$ = 
+          1, $CellContext`h0$$ = 0, $CellContext`hbr0$$ = 
+          0}], {{$CellContext`endtime$$, 5, "Time"}, 0.01, 10, ImageSize -> 
+         Tiny}, {{$CellContext`k1$$, 1, 
+          Subscript["k", "1"]}, 0.1, 3, ImageSize -> 
+         Tiny}, {{$CellContext`k2$$, 1, 
+          Subscript["k", "2"]}, 0.1, 3, ImageSize -> 
+         Tiny}, {{$CellContext`k3$$, 1, 
+          Subscript["k", "3"]}, 0.1, 3, ImageSize -> 
+         Tiny}, {{$CellContext`k4$$, 1, 
+          Subscript["k", "4"]}, 0.1, 3, ImageSize -> 
+         Tiny}, {{$CellContext`k5$$, 1, 
+          Subscript["k", "5"]}, 0.1, 3, ImageSize -> 
+         Tiny}, {{$CellContext`br20$$, 1, 
+          "[\!\(\*SubscriptBox[\(Br\), \(2\)]\)\!\(\*SubscriptBox[\(]\), \
+\(0\)]\)"}, 0.1, 2, ImageSize -> 
+         Tiny}, {{$CellContext`br0$$, 0, 
+          "[Br\[CenterDot]\!\(\*SubscriptBox[\(]\), \(0\)]\)"}, 0, 2, 
+         ImageSize -> 
+         Tiny}, {{$CellContext`h20$$, 1, 
+          "[\!\(\*SubscriptBox[\(H\), \(2\)]\)\!\(\*SubscriptBox[\(]\), \
+\(0\)]\)"}, 0.1, 2, ImageSize -> 
+         Tiny}, {{$CellContext`h0$$, 0, 
+          "[H\[CenterDot]\!\(\*SubscriptBox[\(]\), \(0\)]\)"}, 0, 2, 
+         ImageSize -> 
+         Tiny}, {{$CellContext`hbr0$$, 0, 
+          "[HBr\!\(\*SubscriptBox[\(]\), \(0\)]\)"}, 0, 2, ImageSize -> 
+         Tiny}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{661., {201., 208.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`brsolns[
+         Pattern[$CellContext`ka, 
+          Blank[]], 
+         Pattern[$CellContext`kb, 
+          Blank[]], 
+         Pattern[$CellContext`kc, 
+          Blank[]], 
+         Pattern[$CellContext`kd, 
+          Blank[]], 
+         Pattern[$CellContext`ke, 
+          Blank[]], 
+         Pattern[$CellContext`br2starter, 
+          Blank[]], 
+         Pattern[$CellContext`brstarter, 
+          Blank[]], 
+         Pattern[$CellContext`h2starter, 
+          Blank[]], 
+         Pattern[$CellContext`hstarter, 
+          Blank[]], 
+         Pattern[$CellContext`hbrstarter, 
+          Blank[]]] := 
+       NDSolve[{
+         Derivative[
+           1][$CellContext`br2][$CellContext`t] == (-$CellContext`ka) \
+$CellContext`br2[$CellContext`t] - $CellContext`kc \
+$CellContext`h[$CellContext`t] $CellContext`br2[$CellContext`t] + \
+$CellContext`ke $CellContext`br[$CellContext`t]^2, 
+          Derivative[1][$CellContext`br][$CellContext`t] == 
+          2 $CellContext`ka $CellContext`br2[$CellContext`t] - \
+$CellContext`kb $CellContext`br[$CellContext`t] \
+$CellContext`h2[$CellContext`t] + $CellContext`kc \
+$CellContext`h[$CellContext`t] $CellContext`br2[$CellContext`t] + \
+$CellContext`kd $CellContext`h[$CellContext`t] \
+$CellContext`hbr[$CellContext`t] - 
+           2 $CellContext`ke $CellContext`br[$CellContext`t]^2, 
+          Derivative[
+           1][$CellContext`h2][$CellContext`t] == (-$CellContext`kb) \
+$CellContext`br[$CellContext`t] $CellContext`h2[$CellContext`t] + \
+$CellContext`kd $CellContext`h[$CellContext`t] \
+$CellContext`hbr[$CellContext`t], 
+          Derivative[
+           1][$CellContext`h][$CellContext`t] == $CellContext`kb \
+$CellContext`br[$CellContext`t] $CellContext`h2[$CellContext`t] - \
+$CellContext`kc $CellContext`h[$CellContext`t] \
+$CellContext`br2[$CellContext`t] - $CellContext`kd \
+$CellContext`h[$CellContext`t] $CellContext`hbr[$CellContext`t], 
+          Derivative[
+           1][$CellContext`hbr][$CellContext`t] == $CellContext`kb \
+$CellContext`br[$CellContext`t] $CellContext`h2[$CellContext`t] + \
+$CellContext`kc $CellContext`h[$CellContext`t] \
+$CellContext`br2[$CellContext`t] - $CellContext`kd \
+$CellContext`h[$CellContext`t] $CellContext`hbr[$CellContext`t], \
+$CellContext`br2[0] == $CellContext`br2starter, $CellContext`br[
+           0] == $CellContext`brstarter, $CellContext`h2[
+           0] == $CellContext`h2starter, $CellContext`h[
+           0] == $CellContext`hstarter, $CellContext`hbr[
+           0] == $CellContext`hbrstarter}, {$CellContext`br2, \
+$CellContext`br, $CellContext`h2, $CellContext`h, $CellContext`hbr}, \
+{$CellContext`t, 0, 10}], Attributes[Derivative] = {NHoldAll, ReadProtected}, 
+       Attributes[Subscript] = {NHoldRest}}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.704058063280295*^9},ExpressionUUID->"36e34d1b-cb97-4ff6-bf51-\
+e56a3df18007"]
+}, Open  ]]
+},
+WindowSize->{759, 553},
+WindowMargins->{{Automatic, 252}, {24, Automatic}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 12777, 313, 943, "Input", "ExpressionUUID" -> \
+"cbf1a1d4-0918-40dc-86f8-5bacb91b44f6"],
+Cell[13360, 337, 10734, 216, 426, "Output", "ExpressionUUID" -> \
+"36e34d1b-cb97-4ff6-bf51-e56a3df18007"]
+}, Open  ]]
+}
+]
+*)
+
