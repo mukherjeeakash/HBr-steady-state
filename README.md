@@ -1,0 +1,2 @@
+# HBr-steady-state
+This demonstration plot the concentrations of all species involved in the synthesis of hydrogen bromide from bromine and hydrogen. The reaction proceeds through a radical chain reaction. Initialization is production of bromine radicals through excitement by light. Propagation creates hydrogen radicals and hydrogen bromide molecules. Termination occurs at the combination of hydrogen radicals and bromine radicals to produce hydrogen bromide.
